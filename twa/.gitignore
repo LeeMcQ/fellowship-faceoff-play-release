@@ -1,0 +1,33 @@
+# Secrets / signing — never commit
+android.keystore
+*.keystore
+*.jks
+*.keystore.pass
+local.properties
+*.pem
+service-account*.json
+**/google-services.json
+
+# Bubblewrap / Android build caches
+app/build/
+build/
+.gradle/
+
+# Build outputs at project root (keep dist/ unsigned AAB intentionally)
+/*.apk
+/*.aab
+*.ap_
+*.dex
+app-release-signed.apk
+app-release-unsigned.apk
+app-release-bundle.aab
+output-metadata.json
+
+# Allow the convenience unsigned AAB under dist/
+!dist/
+!dist/*.aab
+
+# IDE
+.idea/
+*.iml
+.vscode/

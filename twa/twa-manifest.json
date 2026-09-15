@@ -1,0 +1,42 @@
+{
+  "packageId": "com.leemcq.fellowshipfaceoff",
+  "host": "leemcq.github.io",
+  "name": "Fellowship Face-Off",
+  "launcherName": "Fellowship Face-Off",
+  "display": "standalone",
+  "themeColor": "#0F0F1A",
+  "themeColorDark": "#0F0F1A",
+  "navigationColor": "#0F0F1A",
+  "navigationColorDark": "#0F0F1A",
+  "navigationDividerColor": "#0F0F1A",
+  "navigationDividerColorDark": "#0F0F1A",
+  "backgroundColor": "#0F0F1A",
+  "enableNotifications": true,
+  "startUrl": "/logosliving/index.html",
+  "iconUrl": "https://leemcq.github.io/logosliving/icon-512.png",
+  "maskableIconUrl": "https://leemcq.github.io/logosliving/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "upload"
+  },
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://leemcq.github.io/logosliving/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://leemcq.github.io/logosliving/",
+  "minSdkVersion": 21,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}
