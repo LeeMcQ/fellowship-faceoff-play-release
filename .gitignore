@@ -19,3 +19,14 @@ Thumbs.db
 twa/.gradle/
 twa/build/
 twa/app/build/
+
+# Build outputs, local config and signing material (never commit)
+build/
+.gradle/
+local.properties
+*.jks
+*.keystore
+key.properties
+keystore.properties
+*.aab
+*.apk

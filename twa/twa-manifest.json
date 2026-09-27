@@ -17,7 +17,7 @@
   "maskableIconUrl": "https://leemcq.github.io/logosliving/icon-512.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "./android.keystore",
+    "path": "/workspace/fellowship-faceoff-keys/fellowship-faceoff-upload.keystore",
     "alias": "upload"
   },
   "appVersionCode": 1,

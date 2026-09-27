@@ -50,6 +50,15 @@ def twaManifest = [
     orientation: 'portrait',
 ]
 
+// Release signing: secrets are read from an external keystore.properties file
+// (never committed). Override the location with env FELLOWSHIP_KEYSTORE_PROPERTIES.
+def keystorePropsPath = System.getenv('FELLOWSHIP_KEYSTORE_PROPERTIES') ?: '/workspace/fellowship-faceoff-keys/keystore.properties'
+def keystorePropsFile = file(keystorePropsPath)
+def keystoreProps = new Properties()
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+
 android {
     compileSdkVersion 36
     namespace "com.leemcq.fellowshipfaceoff"
@@ -150,9 +159,22 @@ android {
 
         
     }
+    signingConfigs {
+        release {
+            if (keystorePropsFile.exists()) {
+                storeFile file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled true
+            if (keystorePropsFile.exists()) {
+                signingConfig signingConfigs.release
+            }
         }
     }
     compileOptions {
