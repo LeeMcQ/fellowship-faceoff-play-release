@@ -2,21 +2,23 @@
 
 For the TWA to verify ownership of the PWA host, publish this file so it is served at:
 
-**https://leemcq.github.io/logosliving/.well-known/assetlinks.json**
+**https://leemcq.github.io/.well-known/assetlinks.json**
 
-## What to add in the `logosliving` repo
+Android only checks the domain root, so this belongs in the `LeeMcQ/leemcq.github.io` user Pages site, not in `logosliving` (a file under `/logosliving/.well-known/` is ignored).
+
+## What to add in the `leemcq.github.io` repo
 
 Copy the placeholder file from this scaffold:
 
 - Source (in this TWA project): `.well-known/assetlinks.json`
-- Destination (in logosliving): `.well-known/assetlinks.json`
+- Destination (in `LeeMcQ/leemcq.github.io`): `.well-known/assetlinks.json`
 
-After commit + push to `gh-pages` / the Pages branch, verify:
+After commit + push to that repo's Pages branch, verify:
 
 ```bash
-curl -sI https://leemcq.github.io/logosliving/.well-known/assetlinks.json
+curl -sI https://leemcq.github.io/.well-known/assetlinks.json
 # Expect: HTTP/2 200 and content-type application/json (or text/plain is often OK)
-curl -s https://leemcq.github.io/logosliving/.well-known/assetlinks.json
+curl -s https://leemcq.github.io/.well-known/assetlinks.json
 ```
 
 ## Filling fingerprints (required before Play release)

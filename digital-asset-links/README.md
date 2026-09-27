@@ -5,9 +5,9 @@ Publish `assetlinks.json` so Chrome / Android can verify that the Play app
 
 ## Live URL (required)
 
-`https://leemcq.github.io/logosliving/.well-known/assetlinks.json`
+`https://leemcq.github.io/.well-known/assetlinks.json`
 
-That path lives in the **logosliving** GitHub Pages site (`LeeMcQ/logosliving`), **not** in this release repo.
+Android only checks `/.well-known/assetlinks.json` at the **domain root**, so this file lives in the `leemcq.github.io` user Pages site (`LeeMcQ/leemcq.github.io`), **not** in `LeeMcQ/logosliving` and not in this release repo. A copy under `/logosliving/.well-known/` is ignored.
 
 ## Steps
 
@@ -17,14 +17,14 @@ That path lives in the **logosliving** GitHub Pages site (`LeeMcQ/logosliving`),
    ```
 2. After first AAB upload, open Play Console → **Setup → App signing** and copy the **App signing key certificate** SHA-256.
 3. Edit `assetlinks.json` in this folder: replace both placeholders with the real fingerprints (colon-separated hex).
-4. Copy the filled file into the logosliving repo as:
+4. Copy the filled file into the `LeeMcQ/leemcq.github.io` repo as:
    ```
    .well-known/assetlinks.json
    ```
 5. Commit, push, wait for Pages, then verify:
    ```bash
-   curl -sI https://leemcq.github.io/logosliving/.well-known/assetlinks.json
-   curl -s https://leemcq.github.io/logosliving/.well-known/assetlinks.json
+   curl -sI https://leemcq.github.io/.well-known/assetlinks.json
+   curl -s https://leemcq.github.io/.well-known/assetlinks.json
    ```
 6. Optional: [Statement List Generator](https://developers.google.com/digital-asset-links/tools/generator)
 

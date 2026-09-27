@@ -13,7 +13,7 @@ Print or tick digitally. Details and file links live in `README.md`.
 - [ ] Upload keystore created locally (not in git)
 - [ ] Keystore passwords saved in a password manager
 - [ ] Upload-key SHA-256 copied (`keytool -list -v`)
-- [ ] Signed **`.aab`** built (not the unsigned convenience file alone)
+- [ ] Signed **`.aab`** built locally (never committed)
 - [ ] Privacy policy: contact email filled in `privacy/privacy-policy.html`
 - [ ] Privacy policy hosted on public HTTPS
 - [ ] Listing copy ready (`LISTING_COPY.md`)
@@ -31,9 +31,9 @@ Print or tick digitally. Details and file links live in `README.md`.
 ## Digital Asset Links
 
 - [ ] Both SHA-256 fingerprints in `digital-asset-links/assetlinks.json`
-- [ ] Published to logosliving: `.well-known/assetlinks.json`
+- [ ] Published at the domain root via `LeeMcQ/leemcq.github.io`: `.well-known/assetlinks.json`
 - [ ] Live URL returns 200:  
-      `https://leemcq.github.io/logosliving/.well-known/assetlinks.json`
+      `https://leemcq.github.io/.well-known/assetlinks.json`
 - [ ] TWA opens without browser chrome (after install from internal/closed track)
 
 ## Store listing & policy forms
@@ -63,4 +63,4 @@ Print or tick digitally. Details and file links live in `README.md`.
 
 ---
 
-**Reminder:** New Play apps need a signed **`.aab`**. APK is not for new app uploads. Unsigned AAB in `twa/dist/` is convenience only — see `twa/dist/README.md`.
+**Reminder:** New Play apps need a signed **`.aab`**. APK is not for new app uploads. No AAB is committed to this repo; build and sign locally, and record the versionCode and SHA-256 in `CHANGELOG.md` and the release tag.

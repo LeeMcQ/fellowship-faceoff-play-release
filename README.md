@@ -8,7 +8,7 @@ Public release kit for publishing **Fellowship Face-Off** as an Android Trusted 
 - **Package name (immutable once used):** `com.leemcq.fellowshipfaceoff`
 - **Developer GitHub:** LeeMcQ
 
-Game source code is **not** duplicated here. It lives in [`LeeMcQ/logosliving`](https://github.com/LeeMcQ/logosliving). This repo holds the Bubblewrap/TWA project, store assets, listing copy, privacy stub, Digital Asset Links placeholders, and an **unsigned** AAB for convenience.
+Game source code is **not** duplicated here. It lives in [`LeeMcQ/logosliving`](https://github.com/LeeMcQ/logosliving). This repo holds the Bubblewrap/TWA project, store assets, listing copy, privacy stub, and Digital Asset Links placeholders. No AAB/APK is committed (the repo is public); signed bundles are built locally and uploaded to Play. Release history is in [`CHANGELOG.md`](CHANGELOG.md).
 
 ---
 
@@ -16,10 +16,11 @@ Game source code is **not** duplicated here. It lives in [`LeeMcQ/logosliving`](
 
 1. **Google Play**, not Apple.
 2. **New Play apps require a signed `.aab` (Android App Bundle).** An APK is **not** accepted for new app listings. If someone said “just upload an APK,” that advice is outdated for new apps — use a signed AAB.
-3. The file `twa/dist/fellowship-faceoff-unsigned.aab` is **unsigned** and included only so you can inspect / rebuild from the same project. **Sign before Play upload** (or run a signed Bubblewrap build). See [`twa/dist/README.md`](twa/dist/README.md).
+3. No AAB is committed to this repo. Build a **signed** AAB locally from [`twa/`](twa/) (see [`twa/PLAY_WRAP_README.md`](twa/PLAY_WRAP_README.md) §3). Each tagged release (`v<semver>`) records the uploaded AAB's versionCode and SHA-256.
 4. Package ID **`com.leemcq.fellowshipfaceoff`** cannot be changed after first use on Play.
-5. Digital Asset Links must be published on the **logosliving** GitHub Pages site at  
-   `https://leemcq.github.io/logosliving/.well-known/assetlinks.json`  
+5. Digital Asset Links must be published at the **domain root** of `leemcq.github.io` (Android only checks `/.well-known/` at the host root, not under `/logosliving/`):  
+   `https://leemcq.github.io/.well-known/assetlinks.json`  
+   It is served from the `LeeMcQ/leemcq.github.io` user Pages site, not from logosliving.  
    (copy from [`digital-asset-links/`](digital-asset-links/); instructions in that folder’s README).
 
 ---
@@ -33,9 +34,9 @@ Game source code is **not** duplicated here. It lives in [`LeeMcQ/logosliving`](
 | [`PAYMENTS_AND_POLICY.md`](PAYMENTS_AND_POLICY.md) | Play Billing vs web unlocks, ads, Data safety notes |
 | [`store-assets/`](store-assets/) | Feature graphic, 512 icon, screenshot capture script |
 | [`privacy/privacy-policy.html`](privacy/privacy-policy.html) | Privacy policy — **add contact email before hosting** |
-| [`digital-asset-links/`](digital-asset-links/) | `assetlinks.json` placeholders + how to publish to logosliving |
+| [`digital-asset-links/`](digital-asset-links/) | `assetlinks.json` placeholders + how to publish at the `leemcq.github.io` root |
 | [`twa/`](twa/) | Bubblewrap TWA project (`twa-manifest.json`, Gradle app, `PLAY_WRAP_README.md`) |
-| [`twa/dist/fellowship-faceoff-unsigned.aab`](twa/dist/fellowship-faceoff-unsigned.aab) | Unsigned AAB (sign before upload) |
+| [`CHANGELOG.md`](CHANGELOG.md) | Release history (versionCode, versionName, AAB SHA-256) |
 
 ---
 
@@ -61,9 +62,9 @@ export BUBBLEWRAP_KEY_PASSWORD='…'
 bubblewrap build --skipPwaValidation
 ```
 
-→ [`twa/PLAY_WRAP_README.md`](twa/PLAY_WRAP_README.md) §3 · [`twa/dist/README.md`](twa/dist/README.md)
+→ [`twa/PLAY_WRAP_README.md`](twa/PLAY_WRAP_README.md) §3
 
-Upload the **signed** `.aab` to Play Console. Do not rely on the unsigned convenience AAB alone.
+Upload the **signed** `.aab` to Play Console. Never commit the `.aab`, keystore or `keystore.properties`.
 
 ### 3. Create the Play Console app
 
@@ -102,12 +103,12 @@ Complete Data safety and related forms to match the **shipped** Play build.
 
 → [`PAYMENTS_AND_POLICY.md`](PAYMENTS_AND_POLICY.md)
 
-### 9. Digital Asset Links on logosliving Pages
+### 9. Digital Asset Links at the leemcq.github.io root
 
 Fill fingerprints in [`digital-asset-links/assetlinks.json`](digital-asset-links/assetlinks.json), then publish to:
 
-`LeeMcQ/logosliving` → `.well-known/assetlinks.json`  
-Live: https://leemcq.github.io/logosliving/.well-known/assetlinks.json
+`LeeMcQ/leemcq.github.io` → `.well-known/assetlinks.json`  
+Live: https://leemcq.github.io/.well-known/assetlinks.json
 
 → [`digital-asset-links/README.md`](digital-asset-links/README.md) · [`twa/ASSETLINKS_GITHUB_PAGES.md`](twa/ASSETLINKS_GITHUB_PAGES.md)
 
@@ -132,7 +133,7 @@ Full description and what’s-new: see [`LISTING_COPY.md`](LISTING_COPY.md).
 
 ## What “you said APK” means here
 
-Older Android workflows distributed **APKs**. **Google Play now requires App Bundles (`.aab`) for new apps.** Sideloading an APK for personal testing is fine; **Play Console upload for a new app must be a signed AAB.** This repo therefore ships an unsigned `.aab` under `twa/dist/`, not an APK for store submission.
+Older Android workflows distributed **APKs**. **Google Play now requires App Bundles (`.aab`) for new apps.** Sideloading an APK for personal testing is fine; **Play Console upload for a new app must be a signed AAB.** This repo holds the TWA source that builds the signed `.aab`; neither AABs nor APKs are committed.
 
 ---
 

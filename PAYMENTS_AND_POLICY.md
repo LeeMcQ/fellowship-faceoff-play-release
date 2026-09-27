@@ -50,7 +50,7 @@ Re-verify after any analytics, crash reporting, or Billing SDK is added.
 
 ## Notifications
 
-`twa-manifest.json` has `enableNotifications: true`. Users must still grant permission. On Android 13+, system notification permission applies. Turn off in manifest + rebuild if you do not want notifications in the Play build.
+Notifications are **off** in the Play build since 1.0.1 (versionCode 2): `twa-manifest.json` has `enableNotifications: false` and the app does not request `POST_NOTIFICATIONS`. If you turn them back on, rebuild and update the Data safety form and privacy policy.
 
 ## Content ratings / target audience
 

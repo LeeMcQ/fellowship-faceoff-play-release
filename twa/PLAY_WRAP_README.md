@@ -114,11 +114,13 @@ Stub files in this repo:
 | File | Purpose |
 |------|---------|
 | `assetlinks.json.example` | Documented stub with placeholders |
-| `.well-known/assetlinks.json` | Same stub — copy into the **logosliving** repo |
+| `.well-known/assetlinks.json` | Same stub — copy into the **`LeeMcQ/leemcq.github.io`** repo (domain root) |
 
 **Must be live at:**
 
-`https://leemcq.github.io/logosliving/.well-known/assetlinks.json`
+`https://leemcq.github.io/.well-known/assetlinks.json`
+
+Android only checks the domain root, so a copy under `/logosliving/.well-known/` does not count.
 
 See `ASSETLINKS_GITHUB_PAGES.md` for the exact copy path and verification curls.
 
@@ -133,13 +135,12 @@ Statement List Generator / verification:
 
 https://developers.google.com/digital-asset-links/tools/generator
 
-## 6) Notifications permission
+## 6) Notifications (off)
 
-`twa-manifest.json` has `"enableNotifications": true` so the TWA can use notification delegation.
+Notifications are **off** in the Play build (since 1.0.1 / versionCode 2): `twa-manifest.json` and `app/build.gradle` have `enableNotifications: false`, and the generated `AndroidManifest.xml` no longer declares `POST_NOTIFICATIONS`, the notification small icon, or `NotificationPermissionRequestActivity`. The app does not use notification delegation.
 
-- The PWA must still request notification permission in the web UI where appropriate.
-- On Android 13+ (API 33+), the system notification permission may be required; Chrome / android-browser-helper handles delegation when Digital Asset Links verify successfully.
-- If you do **not** need notifications in the Play build, set `enableNotifications` to `false` and run `bubblewrap update --skipVersionUpgrade`.
+- To turn them back on later, set `enableNotifications` to `true`, run `bubblewrap update`, bump versionCode, and update the Data safety form and privacy policy to match.
+- With notifications on, the PWA must request permission in the web UI, and on Android 13+ (API 33+) the system notification permission applies.
 
 ## 7) Paid unlocks / billing (Play policy)
 
