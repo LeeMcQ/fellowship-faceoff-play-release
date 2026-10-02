@@ -11,6 +11,9 @@ tagged `web-YYYY.MM.DD`.
 
 ## [Unreleased]
 
+### Changed
+- `privacy/privacy-policy.html` replaced with the published Play privacy policy from `LeeMcQ/logosliving` `privacy.html` (tag `web-2026.10.02`, commit b722c67), live at https://leemcq.github.io/logosliving/privacy.html. It covers no ads, no analytics, on-device storage, notifications off in the Android app, and POPIA/GDPR rights.
+
 ## [1.0.1] - 2026-09-27
 
 Rebuild for Google Play.
