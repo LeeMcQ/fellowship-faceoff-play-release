@@ -13,6 +13,7 @@ tagged `web-YYYY.MM.DD`.
 
 ### Changed
 - `privacy/privacy-policy.html` replaced with the published Play privacy policy from `LeeMcQ/logosliving` `privacy.html` (tag `web-2026.10.02`, commit b722c67), live at https://leemcq.github.io/logosliving/privacy.html. It covers no ads, no analytics, on-device storage, notifications off in the Android app, and POPIA/GDPR rights.
+- Docs: removed the contact-email placeholder, the stub-policy hosting steps and all ad wording (the app has no ads) from `README.md`, `RELEASE_CHECKLIST.md`, `LISTING_COPY.md` and `PAYMENTS_AND_POLICY.md`; they now give the live policy URL https://leemcq.github.io/logosliving/privacy.html and contact Mcquir4l@gmail.com.
 
 ## [1.0.1] - 2026-09-27
 

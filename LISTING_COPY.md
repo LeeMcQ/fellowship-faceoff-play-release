@@ -56,8 +56,17 @@ https://leemcq.github.io/logosliving/
 
 Content and game updates can arrive with the website. Package name: com.leemcq.fellowshipfaceoff
 
-Privacy policy URL: host privacy/privacy-policy.html (add your contact email first) and paste that public HTTPS URL into Play Console.
+Privacy policy: https://leemcq.github.io/logosliving/privacy.html
 ```
+
+---
+
+## Store settings
+
+| Field | Value |
+|-------|-------|
+| Privacy policy URL (App content) | https://leemcq.github.io/logosliving/privacy.html |
+| Contact email (Store settings) | Mcquir4l@gmail.com |
 
 ---
 

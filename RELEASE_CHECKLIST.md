@@ -14,12 +14,11 @@ Print or tick digitally. Details and file links live in `README.md`.
 - [ ] Keystore passwords saved in a password manager
 - [ ] Upload-key SHA-256 copied (`keytool -list -v`)
 - [ ] Signed **`.aab`** built locally (never committed)
-- [ ] Privacy policy: contact email filled in `privacy/privacy-policy.html`
-- [ ] Privacy policy hosted on public HTTPS
+- [ ] Privacy policy live: https://leemcq.github.io/logosliving/privacy.html (contact: Mcquir4l@gmail.com)
 - [ ] Listing copy ready (`LISTING_COPY.md`)
 - [ ] Feature graphic + icon ready (`store-assets/`)
 - [ ] ≥2 phone screenshots captured (`store-assets/SCREENSHOTS_BRIEF.md`)
-- [ ] Payments/ads decision documented (`PAYMENTS_AND_POLICY.md`)
+- [ ] Payments decision documented (`PAYMENTS_AND_POLICY.md`)
 
 ## Play Console — create & sign
 
@@ -40,11 +39,11 @@ Print or tick digitally. Details and file links live in `README.md`.
 
 - [ ] Title / short / full / what’s new pasted from `LISTING_COPY.md`
 - [ ] Graphics uploaded (feature + icon + screenshots)
-- [ ] Privacy policy URL set
-- [ ] Data safety form completed (match ads/Billing reality)
+- [ ] Privacy policy URL set to https://leemcq.github.io/logosliving/privacy.html
+- [ ] Data safety form completed to match the shipped build (`PAYMENTS_AND_POLICY.md`)
 - [ ] Content rating questionnaire completed
 - [ ] Target audience / news apps / COVID / etc. declarations completed as prompted
-- [ ] Ads declaration matches build
+- [ ] App content → Ads: "No, my app does not contain ads"
 - [ ] Financial features / Billing declared if used
 
 ## Testing → production
